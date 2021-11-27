@@ -11,11 +11,14 @@ class ListenerProvider implements ListenerProviderInterface {
     }
 
     function getListenersForEvent(object $event):iterable{
+        $listeners = new ArrayIterator();
         foreach($this->listeners as $type => $listener ){
-            if($event instanceof $)
+            if($event::class == $type)
+            $listeners[] = $listener;
         }
-        return new ArrayIterator();
+        return $listeners();
     }
 
+    
 
 }
